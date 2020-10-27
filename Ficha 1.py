@@ -174,6 +174,26 @@ def _8():
 		if option == 'n':
 			break
 
+def _9():
+	while True:
+		print("\n\tEXERCÍCIO 9")
+		print("\nNeste exercício vamos receber um depósito em €, pedir a taxa de juro e calcular quanto teremos no final do mês\n")
+		try:
+			deposito = float(input("Qual o valor depositado: "))
+			taxa = float(input("Qual a taxa de juro em %: "))
+			taxa /= 100
+			resultado = round((deposito + (deposito * taxa)), 2)
+			print("Um depósito de:", str(deposito) + "€ a", str(round((taxa*100), 2)) + "% =", str(resultado) + "€")
+		except ValueError as erro:
+			print("Erro:", erro, "\nValor inválido\n")
+		while True:
+			option = input("\nQuer repetir o exercício (s/n)? ")
+			if option != 's' and option != 'n':
+				print("\nOpção inválida")
+			else:
+				break
+		if option == 'n':
+			break
 
 if __name__ == '__main__':
 	option = '1'
@@ -205,5 +225,8 @@ if __name__ == '__main__':
 		if option == '8':
 			_8()
 			continue
-		elif option !='0' or int(option) > 8:
+		if option == '9':
+			_9()
+			continue
+		elif option !='0' or int(option) > 9:
 			print("\nOpção inválida\n")
