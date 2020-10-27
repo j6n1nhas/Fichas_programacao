@@ -134,6 +134,25 @@ def _6():
 		if option == 'n':
 			break
 
+def _7():
+	while True:
+		print("\n\tEXERCÍCIO 7")
+		print("\nNeste exercício vamos receber uma temperatura em Celsius e mostrá-la em Fahrenheit")
+		try:
+			celsius = float(input("\nQuantos graus Celsius pretende converter: "))
+			fahrenheit = (9*celsius+160)/5
+			print("\n", str(celsius) + "ºC =", str(fahrenheit) + "ºF\n")
+		except ValueError as erro:
+			print("Erro:", erro, "\nValor inválido")
+		while True:
+			option = input("\nQuer repetir o exercício (s/n)? ")
+			if option != 's' and option != 'n':
+				print("\nOpção inválida")
+			else:
+				break
+		if option == 'n':
+			break
+
 if __name__ == '__main__':
 	option = '1'
 	while option != '0':
@@ -158,5 +177,8 @@ if __name__ == '__main__':
 		if option == '6':
 			_6()
 			continue
-		elif option !='0' or int(option) > 6:
+		if option == '7':
+			_7()
+			continue
+		elif option !='0' or int(option) > 7:
 			print("\nOpção inválida\n")
