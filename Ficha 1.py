@@ -111,6 +111,29 @@ def _5():
 			if option == 'n':
 				break
 
+def _6():
+	while True:
+		print("\n\tEXERCÍCIO 6")
+		print("\nVamos criar 2 variáveis para receber 2 valores e efetuar a troca de valores entre elas\n")
+		var_a = str()
+		var_b = str()
+		var_temp = str()
+		var_a = input("Valor para a variável A: ")
+		var_b = input("Valor para a variável B: ")
+		var_temp = var_b
+		var_b = var_a
+		var_a = var_temp
+		print("\nApós a troca as variáveis têm o seguinte valor:")
+		print("\nVariável A:", var_a, "\nVariável B:", var_b)
+		while True:
+			option = input("\nQuer repetir o exercício (s/n)? ")
+			if option != 's' and option != 'n':
+				print("\nOpção inválida")
+			else:
+				break
+		if option == 'n':
+			break
+
 if __name__ == '__main__':
 	option = '1'
 	while option != '0':
@@ -132,5 +155,8 @@ if __name__ == '__main__':
 		if option == '5':
 			_5()
 			continue
-		elif option !='0' or int(option) > 5:
+		if option == '6':
+			_6()
+			continue
+		elif option !='0' or int(option) > 6:
 			print("\nOpção inválida\n")
