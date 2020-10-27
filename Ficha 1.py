@@ -153,6 +153,28 @@ def _7():
 		if option == 'n':
 			break
 
+def _8():
+	while True:
+		print("\n\tEXERCÍCIO 8")
+		print("\nNeste exercício vamos receber um valor em US$, solicitar a taxa de cambio e apresentar o valor em €")
+		try:
+			dolar = float(input("\nUS$: "))
+			taxa = float(input("\nTaxa de cambio para euros: "))
+		except ValueError as erro:
+			print("Erro:", erro, "\nValor inválido")
+		else:
+			euro = round(dolar * taxa, 2)
+			print("\n" + str(dolar), "à taxa de", str(taxa), "=", str(euro))
+		while True:
+			option = input("\nQuer repetir o exercício (s/n)? ")
+			if option != 's' and option != 'n':
+				print("\nOpção inválida")
+			else:
+				break
+		if option == 'n':
+			break
+
+
 if __name__ == '__main__':
 	option = '1'
 	while option != '0':
@@ -180,5 +202,8 @@ if __name__ == '__main__':
 		if option == '7':
 			_7()
 			continue
-		elif option !='0' or int(option) > 7:
+		if option == '8':
+			_8()
+			continue
+		elif option !='0' or int(option) > 8:
 			print("\nOpção inválida\n")
