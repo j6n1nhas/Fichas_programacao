@@ -82,6 +82,26 @@ def _4():
         if option == 'n':
             break
 
+def _5():
+    while True:
+        print("\n\tEXERCÍCIO 5")
+        print("\nVamos receber o nome de um aluno, 3 notas e calcular a sua média, mostrando no final o nome e o resultado\n")
+        nome = input("Qual o nome do aluno: ")
+        notas = []
+        for i in range(3):
+            print("\nQual a nota", str(i+1) + ": ", end='')
+            notas.append(int(input()))
+        media = (notas[0] + notas[1] + notas[2]) / 3
+        print("\nO", nome, "teve média de:", media, "\n")
+        while True:
+            option = input("\nQuer repetir o exercício (s/n)? ")
+            if option != 's' and option != 'n':
+                print("\nOpção inválida")
+            else:
+                break
+        if option == 'n':
+            break
+
 if __name__ == '__main__':
     option = '1'
     while option != '0':
@@ -100,5 +120,8 @@ if __name__ == '__main__':
         if option == '4':
             _4()
             continue
-        elif option !='0' or int(option) > 2:
+        if option == '5':
+            _5()
+            continue
+        elif option !='0' or int(option) > 4:
             print("\nOpção inválida\n")
