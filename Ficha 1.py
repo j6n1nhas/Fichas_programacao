@@ -216,11 +216,36 @@ def _10():
 			if option == 'n':
 				break
 
+def _12():
+	while True:
+		print("\n\tEXERCÍCIO 12")
+		print("\nVamos receber o custo de fábrica de um automóvel e calcular o seu valor de venda")
+		print("Valor de venda final = Valor de fábrica + 45% de imposto + 28% do distribuidor")
+		imposto = 1.45
+		distribuidor = 1.28
+		try:
+			valor = float(input("Valor de fábrica: "))
+			resultado = valor * imposto
+			resultado *= distribuidor
+			resultado = round(resultado, 2)
+			print("Valor final do automóvel com custo de fábrica de", str(valor) + "€:")
+			print("Após aplicar 45% de imposto e 28% sobre este resultado, o preço final =", str(resultado) + "€")
+		except ValueError as erro:
+			print("Erro:", erro, "\nValor invalido")
+		while True:
+			option = input("\nQuer repetir o exercício (s/n)? ")
+			if option != 's' and option != 'n':
+				print("\nOpção inválida")
+			else:
+				break
+		if option == 'n':
+			break
+
 if __name__ == '__main__':
 	option = '1'
 	while option != '0':
 		print("\n\tFicha 1\n")
-		option = input("Qual o exercício que pretende resolver? ")
+		option = input("Qual o exercício que pretende resolver (1-12 ou 0 para sair)? ")
 		print("\nOpção escolhida:", option)
 		if option == '1':
 			_1()
@@ -252,5 +277,11 @@ if __name__ == '__main__':
 		if option == '10':
 			_10()
 			continue
-		elif option !='0' or int(option) > 10:
+		if option == '11':
+			print("Este exercício pede para fazer a mesma coisa que fizemos no número 9")
+			continue
+		if option == '12':
+			_12()
+			continue
+		elif option !='0' or int(option) > 12:
 			print("\nOpção inválida\n")
