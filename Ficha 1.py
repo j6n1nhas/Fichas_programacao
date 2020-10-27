@@ -195,6 +195,27 @@ def _9():
 		if option == 'n':
 			break
 
+def _10():
+		while True:
+			print("\n\tEXERCÍCIO 10")
+			print("\nVamos receber o valor de uma compra em € e o número de prestações sem juros e apresentar o valor das prestações\n")
+			try:
+				compra = float(input("Valor da compra em €: "))
+				prestacoes = int(input("\nQuantas prestações a pagar: "))
+				parcela = round((compra/prestacoes), 2)
+				for i in range(prestacoes):
+					print("Prestação", str(i+1) + ": ", str(parcela) + "€")
+			except ValueError as erro:
+				print("Erro:", erro, "\nValor inválido")
+			while True:
+				option = input("\nQuer repetir o exercício (s/n)? ")
+				if option != 's' and option != 'n':
+					print("\nOpção inválida")
+				else:
+					break
+			if option == 'n':
+				break
+
 if __name__ == '__main__':
 	option = '1'
 	while option != '0':
@@ -228,5 +249,8 @@ if __name__ == '__main__':
 		if option == '9':
 			_9()
 			continue
-		elif option !='0' or int(option) > 9:
+		if option == '10':
+			_10()
+			continue
+		elif option !='0' or int(option) > 10:
 			print("\nOpção inválida\n")
